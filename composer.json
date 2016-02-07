@@ -1,5 +1,5 @@
 {
-    "name": "lyra/content-bundle",
+    "name": "firestorm23/content-bundle",
     "type": "symfony-bundle",
     "description": "A content management bundle for Symfony2, Doctrine2",
     "keywords": ["content management", "cms"],
