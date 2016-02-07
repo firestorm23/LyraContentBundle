@@ -1,3 +1,8 @@
+This is a fork
+=================
+
+Forked from mgiagnoni/LyraContentBundle, to extend it's dependency for Symfony >2.1
+
 LyraContentBundle
 =================
 
