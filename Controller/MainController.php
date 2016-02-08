@@ -97,6 +97,7 @@ class MainController extends ContainerAware
         $nodes = $this->container->get('lyra_content.node_manager')
             ->findNodePublishedDescendantsFilteredByDepth($parent, $depth);
 
+
         if ($addParent) {
             array_unshift($nodes, $parent);
         }

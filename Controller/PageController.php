@@ -26,7 +26,7 @@ class PageController extends ContainerAware
 
         $request = $this->container->get('request');
         if ('POST' == $request->getMethod()) {
-            $form->bindRequest($request);
+            $form->handleRequest($request);
 
             if ($form->isValid() && $this->container->get('lyra_content.page_manager')->savePage($page)) {
                 return $this->getRedirectToContentResponse($page);
@@ -46,7 +46,7 @@ class PageController extends ContainerAware
 
         $request = $this->container->get('request');
         if ('POST' === $request->getMethod()) {
-            $form->bindRequest($request);
+            $form->handleRequest($request);
 
             if ($form->isValid() && $this->container->get('lyra_content.page_manager')->savePage($page)) {
                return $this->getRedirectToContentResponse($page);

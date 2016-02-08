@@ -83,6 +83,8 @@ class PageManager extends AbstractPageManager
 
         } catch(\Exception $e) {
 
+            cDump($e);
+
             $this->em->getConnection()->rollback();
             $this->em->close();
 

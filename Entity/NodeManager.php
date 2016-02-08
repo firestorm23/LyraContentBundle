@@ -180,6 +180,8 @@ class NodeManager extends AbstractNodeManager
         $qb->andWhere('c.published = true')
             ->andWhere('c.lvl - ' . $node->getLevel() . ' <= :d')
             ->setParameter('d', $depth);
+        cDump($qb->getQuery()->getSQL());
+        cDump($qb->getQuery()->getParameters());
 
         return $qb->getQuery()->getResult();
     }

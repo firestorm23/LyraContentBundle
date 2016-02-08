@@ -15,7 +15,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\FormEvents;
-use Symfony\Component\Form\Event\DataEvent;
+use Symfony\Component\Form\FormEvent;
 use Doctrine\ORM\EntityRepository;
 
 class SetParentFormType extends AbstractType
@@ -51,7 +51,7 @@ class SetParentFormType extends AbstractType
            )));
         };
 
-        $builder->addEventListener(FormEvents::PRE_SET_DATA, function (DataEvent $event) use ($buildParent)
+        $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) use ($buildParent)
             {
                $form = $event->getForm();
                $data = $event->getData();
@@ -62,7 +62,7 @@ class SetParentFormType extends AbstractType
             }
         );
 
-        $builder->addEventListener(FormEvents::POST_BIND, function (DataEvent $event) use ($manager)
+        $builder->addEventListener(FormEvents::POST_BIND, function (FormEvent $event) use ($manager)
             {
                 $data = $event->getData();
 
